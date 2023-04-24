@@ -5,6 +5,8 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "firebase/auth";
 import app from "../../firebase.config";
 
@@ -14,18 +16,27 @@ const auth = getAuth(app);
 
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loader, setLoader] = useState(true);
   const googleProvider = new GoogleAuthProvider();
 
+  const createUser = (email,password) => {
+   return createUserWithEmailAndPassword(auth,email,password);
+  };
+
+  const signInUser = (email,password) => {
+    return signInWithEmailAndPassword(auth,email,password);
+  } 
+
   const handleGoogleLoginBtn = () => {
+    setLoader(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        // console.log(currentUser);
-      }
+      setUser(currentUser);
+      setLoader(false);
+      // console.log(currentUser);
     });
     return () => {
       unsubscribe();
@@ -39,9 +50,11 @@ const AuthProviders = ({ children }) => {
     user,
     handleGoogleLoginBtn,
     handleLogOut,
+    createUser,
+    signInUser
   };
 
-  console.log(user);
+  // console.log(user);
   return (
     <dataContext.Provider value={sharedData}>{children}</dataContext.Provider>
   );

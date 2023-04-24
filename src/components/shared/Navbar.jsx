@@ -7,9 +7,7 @@ const Navbar = () => {
   const handleLog = () => {
     handleLogOut()
     .then(() => {})
-    .catch(error => {
-      console.log(error);
-    })
+    .catch(() => {})
   }
   return (
     <div className="navbar mt-3 mb-9 bg-base-100">
@@ -60,12 +58,14 @@ const Navbar = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
+          {
+            user ? <></> : <><li>
             <Link to="/login">Login</Link>
           </li>
           <li>
             <Link to="/register">Register</Link>
-          </li>
+          </li></>
+          }
         </ul>
         {
           user && <button onClick={handleLog} className="btn btn-error">Logout</button>

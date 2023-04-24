@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./components/ErrorPage";
 import Layout from "./components/Layout";
@@ -11,6 +11,7 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import BookingDetails from "./components/BookingDetails";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,23 +24,26 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path : "about",
-        element : <About></About>
+        path: "about",
+        element: <About></About>,
       },
       {
-        path : "login",
-        element : <Login></Login>
+        path: "login",
+        element: <Login></Login>,
       },
       {
-        path : "register",
-        element : <Register></Register>
+        path: "register",
+        element: <Register></Register>,
       },
       {
-        path : "bookingDetails/:bookingID",
-        element : <BookingDetails></BookingDetails>,
-        loader : () => fetch('/rooms.json')
-        
-      }
+        path: "bookingDetails/:bookingID",
+        element: (
+          <PrivateRoute>
+            <BookingDetails></BookingDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/rooms.json"),
+      },
     ],
   },
 ]);
