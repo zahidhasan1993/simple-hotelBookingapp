@@ -1,0 +1,45 @@
+[
+    {
+      "roomID": 1,
+      "price": 100,
+      "image": "https://img2.chinadaily.com.cn/images/201811/16/5bee5c66a310eff36906b2f7.jpeg",
+      "description": "This cozy single room has a comfortable bed, a private bathroom, and a work desk.",
+      "ratings": 4.5
+    },
+    {
+      "roomID": 2,
+      "price": 150,
+      "image": "https://www.thepostoakhotel.com/img/resort/875x600/1.jpg",
+      "description": "This spacious double room has a queen-sized bed, a balcony with a view, and a mini-fridge.",
+      "ratings": 4.8
+    },
+    {
+      "roomID": 3,
+      "price": 200,
+      "image": "https://www.familyvacay.com/wp-content/uploads/2022/04/post-oak-ambassador-suite.jpg",
+      "description": "This luxurious suite has a king-sized bed, a jacuzzi, and a private terrace.",
+      "ratings": 4.9
+    },
+    {
+      "roomID": 4,
+      "price": 80,
+      "image": "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      "description": "This budget-friendly twin room has two single beds, a shared bathroom, and a TV.",
+      "ratings": 3.5
+    },
+    {
+      "roomID": 5,
+      "price": 120,
+      "image": "https://b-cdn.springnest.com/media/img/14e/double_room_with_sea_view_03.jpeg?crop=2048,1265,0,135&width=620",
+      "description": "This modern studio apartment has a kitchenette, a living area, and a queen-sized bed.",
+      "ratings": 4.7
+    },
+    {
+      "roomID": 6,
+      "price": 250,
+      "image": "https://i.ytimg.com/vi/09pDca1mITM/maxresdefault.jpg",
+      "description": "This exclusive penthouse suite has a private elevator, a rooftop terrace, and a stunning city view.",
+      "ratings": 5
+    }
+  ]
+  
